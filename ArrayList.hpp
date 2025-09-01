@@ -2,7 +2,10 @@
 #define ARRAY_LIST_HPP
 
 #include "List.hpp"
+
 #include <iostream>
+// #include <string>
+
 using namespace std;
 
 template <typename T>
@@ -13,6 +16,9 @@ class ArrayList : public List<T> {
 
         // the maximum number of elements in the list
         int maxSize;
+        
+        // number of elements yet loaded
+        int index;
 
         // copy the state of the argument list to `this`
         void copy(const ArrayList<T>&);
@@ -32,6 +38,22 @@ class ArrayList : public List<T> {
 
         // add the argument to the end of the list
         virtual void append(const T&) override;
+
+        // class TooManyException {
+        //     private:
+        //         string e;
+        //     public:
+        //         TooManyException(string);
+        //         string what() const;
+        // };
+
+        // class IndexOutOfBoundsException {
+        //     private:
+        //         string e;
+        //     public:
+        //         IndexOutOfBoundsException(string);
+        //         string what() const;
+        // };
 
         // remove all elements in the list, resetting to the initial state
         virtual void clear() override;
@@ -65,6 +87,7 @@ class ArrayList : public List<T> {
         // overloaded stream insertion operator to make printing easier
         template <typename U>
         friend ostream& operator<<(ostream&, const ArrayList<U>&);
+
 };
 
 #include "ArrayList.tpp"

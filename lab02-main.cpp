@@ -1,5 +1,4 @@
 #include "ArrayList.hpp"
-#include <string>
 
 int main() {
     // call the constructor with a maximum size of 5
@@ -29,82 +28,82 @@ int main() {
         cout << e << endl;
     }
 
-    // remove an element
-    myList.remove(3);
+    // // remove an element
+    // myList.remove(3);
 
-    // display the state of the list
-    cout << myList;
+    // // display the state of the list
+    // cout << myList;
 
-    // get the third element (position 2) from the list
-    string word = myList.getElement(2);
-    cout << "Element 2: " << word << endl;
+    // // get the third element (position 2) from the list
+    // string word = myList.getElement(2);
+    // cout << "Element 2: " << word << endl;
 
-    // create a second list using the copy constructor
-    ArrayList<string> secondList = myList;
+    // // create a second list using the copy constructor
+    // ArrayList<string> secondList = myList;
 
-    // modify the second list and display its state
-    secondList.append("Beat");
-    secondList.replace(2, "Drums");
-    cout << secondList;
+    // // modify the second list and display its state
+    // secondList.append("Beat");
+    // secondList.replace(2, "Drums");
+    // cout << secondList;
 
-    // try removing an element as an invalid operation
-    try {
-        secondList.remove(4);
-    }
-    catch (const string& e) {
-        cout << e << endl;
-    }
+    // // try removing an element as an invalid operation
+    // try {
+    //     secondList.remove(4);
+    // }
+    // catch (const string& e) {
+    //     cout << e << endl;
+    // }
 
-    // create a third list using the default constructor (max size of 100)
-    ArrayList<string> thirdList;
+    // // create a third list using the default constructor (max size of 100)
+    // ArrayList<string> thirdList;
 
-    // display the state of the list, should be empty
-    cout << thirdList;
+    // // display the state of the list, should be empty
+    // cout << thirdList;
 
-    // copy the first list to the third list using assignment overload
-    thirdList = myList;
+    // // copy the first list to the third list using assignment overload
+    // thirdList = myList;
 
-    // display the length and max size, should match the first list
-    cout << "thirdList length: " << thirdList.getLength() << endl;
-    cout << "thirdList maximum size: " << thirdList.getMaxSize() << endl;
+    // // display the length and max size, should match the first list
+    // cout << "thirdList length: " << thirdList.getLength() << endl;
+    // cout << "thirdList maximum size: " << thirdList.getMaxSize() << endl;
 
-    // try getting an element as an invalid operation
-    try {
-        word = thirdList.getElement(-9);
-    }
-    catch (const string& e) {
-        cout << e << endl;
-    }
+    // // try getting an element as an invalid operation
+    // try {
+    //     word = thirdList.getElement(-9);
+    // }
+    // catch (const string& e) {
+    //     cout << e << endl;
+    // }
 
-    // add elements to the list
-    thirdList.append("Be A");
-    thirdList.append("Yellow");
+    // // add elements to the list
+    // thirdList.append("Be A");
+    // thirdList.append("Yellow");
 
-    // try adding elements as invalid operations
-    try {
-        thirdList.append("Banana");
-    }
-    catch (const string& e) {
-        cout << e << endl;
-    }
-    try {
-        thirdList.insert(0, "Banana");
-    }
-    catch (const string& e) {
-        cout << e << endl;
-    }
+    // // try adding elements as invalid operations
+    // try {
+    //     thirdList.append("Banana");
+    // }
+    // catch (const string& e) {
+    //     cout << e << endl;
+    // }
+    // try {
+    //     thirdList.insert(0, "Banana");
+    // }
+    // catch (const string& e) {
+    //     cout << e << endl;
+    // }
 
-    // display the state of the list
-    cout << thirdList;
+    // // display the state of the list
+    // cout << thirdList;
 
-    // clear out the list and verify it is now empty
-    myList.clear();
-    if (myList.isEmpty()) {
-        cout << "myList is empty!\n";
-    }
-    else if (myList.isFull()) {
-        cout << "myList is full!\n";
-    }
+    // // clear out the list and verify it is now empty
+    // myList.clear();
+    // if (myList.isEmpty()) {
+    //     cout << "myList is empty!\n";
+    // }
+    // else if (myList.isFull()) {
+    //     cout << "myList is full!\n";
+    // }
 
     // terminate
     return 0;
