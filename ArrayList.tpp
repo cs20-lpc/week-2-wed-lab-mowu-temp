@@ -89,12 +89,15 @@ void ArrayList<T>::insert(int position, const T& elem) {
 
 template <typename T>
 bool ArrayList<T>::isEmpty() const {
-    return this->length == 0;
+    // return this->length == 0;
+    return index == 0;
+
 }
 
 template <typename T>
 bool ArrayList<T>::isFull() const {
-    return this->length == maxSize;
+    // return this->length == maxSize;
+    return index == maxSize;
 }
 
 template <typename T>
@@ -124,8 +127,11 @@ ostream& operator<<(ostream& outStream, const ArrayList<T>& myObj) {
         outStream << "List is empty, no elements to display.\n";
     }
     else {
-        for (int i = 0; i < myObj.length; i++) {
-            outStream << myObj.buffer[i] << ' ';
+        // for (int i = 0; i < myObj.length; i++) {
+        //     outStream << myObj.buffer[i] << ' ';
+        // }
+        for (int i = 0; i < myObj.getLength(); i++) {
+            outStream << myObj.getElement(i) << ' ';
         }
         outStream << endl;
     }
