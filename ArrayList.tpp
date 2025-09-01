@@ -1,14 +1,10 @@
-// #ifndef ARRAY_LIST_TPP
-// #define ARRAY_LIST_TPP
-
-// #include <string>
-// #include <iostream>
 using namespace std;
 
 template <typename T>
 ArrayList<T>::ArrayList(int i) {
     buffer = new T[i];
     maxSize = i;
+    index = 0;
 }
 
 template <typename T>
@@ -46,12 +42,15 @@ void ArrayList<T>::clear() {
 
 template <typename T>
 void ArrayList<T>::copy(const ArrayList<T>& copyObj) {
+    
     clear();
-    delete buffer;
-    buffer = new T[copyObj.getMaxSize()];
-    for (int i = 0; i < copyObj.getLength(); i++) {
+    maxSize = copyObj.getMaxSize();
+    index = copyObj.getLength();
+    buffer = new T[maxSize];
+    for (int i = 0; i < index; i++) {
         buffer[i] = copyObj.getElement(i);
     }
+
 }
 
 template <typename T>
@@ -75,11 +74,8 @@ int ArrayList<T>::getMaxSize() const {
 
 template <typename T>
 void ArrayList<T>::insert(int position, const T& elem) {
-    cout << "hey" << endl;
     if (index >= maxSize) {
-        // throw 3;
-        // throw string("Too many elements with insert()");
-        
+        throw string("Too many elements with insert()");
     } else if (position >= 0 && position <= index) {
         for (int i = index; i >= position; i--) {
             buffer[i+1] = buffer[i];
@@ -87,8 +83,7 @@ void ArrayList<T>::insert(int position, const T& elem) {
         buffer[position] = elem;
         index ++;
     } else {
-        // throw 3;
-        // throw string("Index out of bounds with insert()");
+        throw string("Index out of bounds with insert()");
     }
 }
 
